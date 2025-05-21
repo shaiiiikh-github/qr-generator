@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <form method="POST" class="qr-form">
+            <input type="text" name="qr_data" placeholder="Enter text or URL..." required>
+            <button type="submit">Generate</button>
+        </form>
+
+        {% if qr_filename %}
+        <div class="result">
+            <h2>Your QR Code</h2>
+            <img src="/qr/{{ qr_filename }}" alt="QR Code">
+            <div class="download-container">
+                <a href="/qr/{{ qr_filename }}" download="{{ qr_filename }}">
+                    <button class="btn download-btn">Download QR Code</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+
+
+        <p class="count">Total QR Codes Generated: <strong>{{ count }}</strong></p>
+    </div>
+</body>
+
+</html>
