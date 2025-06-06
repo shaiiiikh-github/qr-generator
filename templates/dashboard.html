@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QR Dashboard</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #0056b3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  }
+  .summary {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  table th, table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  table th {
+    background: #0056b3;
+    color: white;
+  }
+  table tr:hover {
+    background: #f0f8ff;
+  }
+  .btn {
+    background: #0056b3;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn:hover {
+    background: #003f80;
+  }
+  @media (max-width: 600px) {
+    .container {
+      margin: 1rem;
+      padding: 0.5rem;
+    }
+    table th, table td {
+      padding: 0.4rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>QR Code Dashboard</header>
+<div class="container">
+  <div class="summary">
+    Total QR Codes Generated: <strong>{{ total_count }}</strong>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>URL</th>
+        <th>Created At</th>
+        <th>QR Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for qr in qr_codes %}
+      <tr>
+        <td>{{ qr.name }}</td>
+        <td>{{ qr.code }}</td>
+        <td><a href="{{ qr.url }}" target="_blank">{{ qr.url }}</a></td>
+        <td>{{ qr.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        <td><a href="/qr/{{ qr.filename }}" target="_blank" class="btn">View</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
