@@ -91,3 +91,14 @@ h1 {
     font-size: 0.95rem;
     color: #666;
 }
+
+.qr-form input {
+    display: block;
+    margin: 0 auto 15px auto; /* center inputs and add spacing below */
+    /* existing styles */
+    padding: 12px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}

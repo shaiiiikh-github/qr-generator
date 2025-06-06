@@ -12,6 +12,7 @@
     <div class="container">
         <h1>QR Code Generator</h1>
         <form method="POST" class="qr-form">
+            <input type="text" name="qr_name" placeholder="Enter a name for your QR code..." required>
             <input type="text" name="qr_data" placeholder="Enter text or URL..." required>
             <button type="submit">Generate</button>
         </form>
@@ -19,6 +20,7 @@
         {% if qr_filename %}
         <div class="result">
             <h2>Your QR Code</h2>
+            <p><strong>Name:</strong> {{ qr_name }}</p>
             <img src="/qr/{{ qr_filename }}" alt="QR Code">
             <div class="download-container">
                 <a href="/qr/{{ qr_filename }}" download="{{ qr_filename }}">
@@ -28,8 +30,11 @@
         </div>
         {% endif %}
 
-
         <p class="count">Total QR Codes Generated: <strong>{{ count }}</strong></p>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
     </div>
 </body>
 
