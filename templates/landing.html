@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Genie | Smarter QR Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1580894745856-c16ced7327aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');">
+    <div class="overlay absolute inset-0"></div>
+    <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
+      <div data-aos="fade-down" class="text-white max-w-2xl">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Generate Smarter, Branded QR Codes</h1>
+        <p class="text-lg md:text-xl mb-6">Track usage, customize appearance, and manage everything from a powerful dashboard.</p>
+        <a href="/"
+           class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-blue-100 transition">
+          Generate QR Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Why Choose QR Genie?</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">We make it easy for businesses and creators to generate and track high-quality QR codes — all in one place.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition" data-aos="zoom-in">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Instant Generation</h3>
+          <p>Create QR codes in seconds with custom labels and redirects.</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition" data-aos="zoom-in" data-aos-delay="100">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Smart Dashboard</h3>
+          <p>Track how many codes are generated and manage URLs in one view.</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition" data-aos="zoom-in" data-aos-delay="200">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Built to Scale</h3>
+          <p>Perfect for personal use or commercial scale deployments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-600 py-16 text-white text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
+    <p class="mb-6">Generate a QR code now or check your dashboard insights.</p>
+    <div class="space-x-4">
+      <a href="/" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">Create QR</a>
+      <a href="/admin/dashboard" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">Dashboard</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-gray-900 text-gray-400 text-sm">
+    © 2025 QR Genie. Built with ❤️ by Shabbir.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
